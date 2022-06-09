@@ -1,4 +1,4 @@
-# cadence-base64
+# Cadence Base64Util contract
 
 ## Playground:
 
