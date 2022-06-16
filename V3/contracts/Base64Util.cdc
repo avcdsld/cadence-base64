@@ -37,7 +37,7 @@ pub contract Base64Util {
             res = res.concat(base64Map[((bytes[i + 2] << 2) >> 2)]!)
             i = i + 3
         }
-        while res[res.length - 1] == "A" { // TODO: Check for problems in all cases.
+        while res[res.length - 1] == "A" { // TODO: Check that there are no problems in all cases
             res = res.slice(from: 0, upTo: res.length - 1)
         }
         return res
