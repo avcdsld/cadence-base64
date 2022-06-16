@@ -1,0 +1,27 @@
+{
+  "emulators": {
+    "default": {
+      "port": 3569,
+      "serviceAccount": "emulator-account"
+    }
+  },
+  "contracts": {
+    "Base64Util": "./contracts/Base64Util.cdc"
+  },
+  "networks": {
+    "emulator": "127.0.0.1:3569",
+    "mainnet": "access.mainnet.nodes.onflow.org:9000",
+    "testnet": "access.devnet.nodes.onflow.org:9000"
+  },
+  "accounts": {
+    "emulator-account": {
+      "address": "f8d6e0586b0a20c7",
+      "key": "9575d353550b5d078509be81c7059529ddba3b8a74cc95117b821b4a51c70fa1"
+    }
+  },
+  "deployments": {
+    "emulator": {
+      "emulator-account": ["Base64Util"]
+    }
+  }
+}
