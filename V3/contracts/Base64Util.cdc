@@ -39,7 +39,7 @@ pub contract Base64Util {
             i = i + 3
         }
         if remainder > 0 {
-            res = res.slice(from: 0, upTo: res.length - remainder)
+            res = res.slice(from: 0, upTo: res.length - (remainder == 1 ? 2 : 1))
         }
         return res
     }
