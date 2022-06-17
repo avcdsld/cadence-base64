@@ -24,8 +24,9 @@ pub contract Base64Util {
             60: "8", 61: "9", 62: "+", 63: "/"
         }
 
-        var res: String = "";
+        var res = "";
         let bytes = str.utf8
+        let remainder = bytes.length % 3
         while bytes.length % 3 != 0 {
             bytes.append(0)
         }
@@ -37,8 +38,8 @@ pub contract Base64Util {
             res = res.concat(base64Map[((bytes[i + 2] << 2) >> 2)]!)
             i = i + 3
         }
-        while res[res.length - 1] == "A" { // TODO: Check that there are no problems in all cases
-            res = res.slice(from: 0, upTo: res.length - 1)
+        if remainder > 0 {
+            res = res.slice(from: 0, upTo: res.length - remainder)
         }
         return res
     }
